@@ -47,15 +47,15 @@ Counter.View1 = styled.span`
   height: 100%;
 `;
 
-Counter.View = styled.div(({ animationStart }) => {
-  if (animationStart) {
+Counter.View = styled.span(({ animationStart }) => {
+  if (!animationStart) {
     return css`
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      animation: 0.1s ${falling} ease-out;
+      animation: 0.5s ${falling} ease-out;
     `;
   }
   return css`

@@ -24,7 +24,7 @@ class CounterComponent extends React.Component {
       disabled: !this.state.start
     });
     console.log(this.state);
-    const timer = setTimeout(this.revert, 500);
+    const timer = setTimeout(this.revert, 1500);
     timer();
     console.log(this.state);
   }
@@ -36,7 +36,7 @@ class CounterComponent extends React.Component {
       disabled: !this.state.start
     });
     console.log(this.state);
-    const timer = setTimeout(this.revert, 500);
+    const timer = setTimeout(this.revert, 1000);
     timer();
     console.log(this.state);
   }
