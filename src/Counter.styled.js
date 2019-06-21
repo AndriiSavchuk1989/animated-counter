@@ -55,7 +55,7 @@ Counter.View = styled.span(({ animationStart }) => {
       left: 0;
       width: 100%;
       height: 100%;
-      animation: 0.1s ${falling} ease-in-out;
+      animation: 0.1s ${falling} ease-in;
     `;
   }
   return css`
@@ -64,7 +64,7 @@ Counter.View = styled.span(({ animationStart }) => {
     left: 0;
     width: 100%;
     height: 100%;
-    animation: 0.1s ${falling} ease-in-out;
+    animation: 0.1s ${falling} ease-in;
   `;
 });
 

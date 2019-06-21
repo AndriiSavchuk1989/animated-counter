@@ -1,8 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Counter from "./Counter.styled";
+import View from "./View.styled";
 
-import "./styles.css";
+class ViewComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0, animation: false };
+    this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
+  }
+
+  onMouseOverHandler() {
+    this.setState({ animation: !this.state.animation });
+  }
+
+  render() {
+    return (
+      <View.Wraper onMouseOver={this.onMouseOverHandler}>
+        <View.Counter animation={this.state.animation}>
+          {this.state.count}
+        </View.Counter>
+      </View.Wraper>
+    );
+  }
+}
 
 class CounterComponent extends React.PureComponent {
   constructor(props) {
@@ -67,4 +88,4 @@ class CounterComponent extends React.PureComponent {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<CounterComponent />, rootElement);
+ReactDOM.render(<ViewComponent />, rootElement);
