@@ -6,7 +6,7 @@ import View from "./View.styled";
 class ViewComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { count: 0, animation: false };
+    this.state = { count: 0, animation: true };
     this.onMouseOverHandler = this.onMouseOverHandler.bind(this);
   }
 
@@ -28,10 +28,14 @@ class ViewComponent extends React.Component {
 class CounterComponent extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { count: 0, start: false, disabled: false };
+    this.state = {};
     this.increaseCounter = this.increaseCounter.bind(this);
     this.decreaseCounter = this.decreaseCounter.bind(this);
     this.revert = this.revert.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ count: 0, start: true, disabled: false });
   }
 
   revert() {
@@ -88,4 +92,4 @@ class CounterComponent extends React.PureComponent {
 }
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<ViewComponent />, rootElement);
+ReactDOM.render(<CounterComponent />, rootElement);

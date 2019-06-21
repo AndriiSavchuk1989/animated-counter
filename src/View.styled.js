@@ -34,7 +34,7 @@ View.Counter = styled.p(({ animation }) => {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: none;
+    animation: 0.8s ${falling} ease-in;
   `;
 });
 
