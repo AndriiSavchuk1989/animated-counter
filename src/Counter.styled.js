@@ -2,10 +2,10 @@ import styled, { css, keyframes } from "styled-components";
 
 const falling = keyframes`
   0% {
-    margin-top: 50%;
+    margin-top: -50px;
   }
   100% {
-    margin-top: 0%;
+    margin-top: 20px;
   }
 `;
 
@@ -48,14 +48,14 @@ Counter.View1 = styled.span`
 `;
 
 Counter.View = styled.span(({ animationStart }) => {
-  if (!animationStart) {
+  if (animationStart) {
     return css`
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      animation: 0.5s ${falling} ease-out;
+      animation: 0.1s ${falling} ease-in-out;
     `;
   }
   return css`
@@ -64,7 +64,7 @@ Counter.View = styled.span(({ animationStart }) => {
     left: 0;
     width: 100%;
     height: 100%;
-    animation: none;
+    animation: 0.1s ${falling} ease-in-out;
   `;
 });
 

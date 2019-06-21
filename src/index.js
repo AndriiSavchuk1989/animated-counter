@@ -14,7 +14,9 @@ class CounterComponent extends React.Component {
   }
 
   revert() {
+    console.log("state before revert___", this.state);
     this.setState({ start: !this.state.start, disabled: !this.state.start });
+    console.log("state after revert___", this.state);
   }
 
   increaseCounter() {
@@ -23,10 +25,8 @@ class CounterComponent extends React.Component {
       start: !this.state.start,
       disabled: !this.state.start
     });
-    console.log(this.state);
     const timer = setTimeout(this.revert, 1500);
     timer();
-    console.log(this.state);
   }
 
   decreaseCounter() {
@@ -35,14 +35,11 @@ class CounterComponent extends React.Component {
       start: !this.state.start,
       disabled: !this.state.start
     });
-    console.log(this.state);
     const timer = setTimeout(this.revert, 1000);
     timer();
-    console.log(this.state);
   }
 
   render() {
-    console.log("start animation___", !this.state.start);
     return (
       <Counter.Wrapper>
         <Counter.DecreaseButton
