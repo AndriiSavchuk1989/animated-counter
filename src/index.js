@@ -4,7 +4,7 @@ import Counter from "./Counter.styled";
 
 import "./styles.css";
 
-class CounterComponent extends React.Component {
+class CounterComponent extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { count: 0, start: false, disabled: false };
@@ -35,11 +35,13 @@ class CounterComponent extends React.Component {
       start: !this.state.start,
       disabled: !this.state.start
     });
-    const timer = setTimeout(this.revert, 1000);
+    const timer = setTimeout(this.revert, 1500);
     timer();
   }
 
   render() {
+    const { start } = this.state;
+    console.log("start___", start);
     return (
       <Counter.Wrapper>
         <Counter.DecreaseButton
