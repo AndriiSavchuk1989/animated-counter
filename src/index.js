@@ -35,7 +35,7 @@ class CounterComponent extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.setState({ count: 0, start: true, disabled: false });
+    this.setState({ count: 0, start: false, disabled: false });
   }
 
   revert() {
